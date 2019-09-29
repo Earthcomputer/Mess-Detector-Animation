@@ -1,0 +1,6 @@
+media/
+Tex/
+videos/
+Pipfile.lock
+__pycache__/
+.idea/

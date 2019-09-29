@@ -1,0 +1,12 @@
+args=()
+curdir=$(pwd)
+
+for i in $@; do
+    replacement=$(pwd | sed -e 's/\//\\\//g')
+    i=$(echo $i | sed -e "s/^\.\//${replacement}\//g")
+    args+=($i)
+done
+
+pushd ../manim
+python3 -m manim $args --media_dir "${curdir}/media"
+popd
